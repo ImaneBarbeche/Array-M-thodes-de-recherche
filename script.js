@@ -38,10 +38,11 @@ const heroes = [
     console.log(indexDernierHero);
 
    // 🎭 Challenge 5 :
-   // 👉 Trouve l'index du premier héros dont le nom est "Yoda".
+   // 👉 Trouve l'index du premier héros dont le nom est "Yoda". 
 
-    const indexPremierHeroName = heroes.findIndex(h => h.name === 'Yoda');
-    console.log(indexPremierHeroName);
+      const heroNames = heroes.map(h => h.name); // Création d'un tableau des noms
+      const indexYodaHero = heroNames.indexOf("Yoda");
+      console.log(indexYodaHero);
 
 
     //🌌 Challenge 6 :
@@ -52,16 +53,16 @@ const heroes = [
 
 
    // 💣 Challenge 7 :
-    //👉 Trouve le premier héros non lumineux et de l'espèce "Wookiee". Cela n'existe pas??
-
-    
+    //👉 Trouve le premier héros non lumineux et de l'espèce "Wookiee". 
+    const doesitExist = heroes.find(h => h.side !== 'Lumineux' && h.species === 'Wookiee');
+    console.log(doesitExist);
     
 
     
    // 🧠 Challenge 8 :
     //👉 Trouve le dernier héros dont le nom contient "Solo" (insensible à la casse).
 
-    const nameSolo = heroes.findLast(h => h.name.includes('Solo'));
+    const nameSolo = heroes.findLast(h => h.name.toLowerCase().includes('solo'));
     console.log(nameSolo);
     
     //🧪 Challenge 9 :
